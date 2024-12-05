@@ -6,7 +6,7 @@
 #'
 #' @param data a dataframe
 #'
-#' @return *** 
+#' @return a list of numerical values 
 #' 
 #' @export
 #'
