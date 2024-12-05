@@ -29,3 +29,6 @@ devtools::load_all(here::here())
 
 # List all R scripts in a sequential order and using the following form:
 # source(here::here("analyses", "script_X.R"))
+
+
+targets::tar_config_set(store = "outputs/pipeline/", script = "analyses/pipeline.R")
