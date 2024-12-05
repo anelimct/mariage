@@ -21,3 +21,9 @@ README.html
 inst/doc
 man/
 NAMESPACE
+
+# .zip files ----
+*.zip
+
+# .csv files ----
+*.csv
