@@ -11,6 +11,7 @@ tar_config_set(store = "outputs/pipeline/", script = "analyses/pipeline.R")
 
 # Run the R scripts in the R/ folder with your custom functions:
 tar_source()
+
 # tar_source("other_functions.R") # Source other scripts as needed.
 
 # Replace the target list below with your own:
@@ -23,7 +24,11 @@ list(
   
   tar_target(data, open_data_folder(data_file)), 
   
-  tar_target(mariage_gay, filtre_mariages_gay(data))
+  tar_target(mariage_gay, filtre_mariages_gay(data)), 
+  
+  tar_target(mariage_lesbien, filtre_mariage_lesbian(data)), 
+  
+  tar_target(mariage_hetero, filtre_mariage_hetero(data))
   
 )
 

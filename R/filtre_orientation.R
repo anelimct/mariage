@@ -37,6 +37,6 @@ filtre_mariage_hetero <- function(data) {
   
   
   
-  return(lesbian)
+  return(hetero)
 }
 
