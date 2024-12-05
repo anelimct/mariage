@@ -32,7 +32,7 @@ open_data_folder <- function(folder_path) {
   
   # Tenter de lire le fichier CSV
   tryCatch({
-    donnees <- read.csv(fichier_a_ouvrir, stringsAsFactors = FALSE)
+    donnees <- read.csv(fichier_a_ouvrir, stringsAsFactors = FALSE, sep = ";")
     return(donnees)
   }, error = function(e) {
     stop("Une erreur s'est produite lors de la lecture du fichier CSV : ", e$message)
