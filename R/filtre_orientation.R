@@ -9,12 +9,34 @@
 #' @return A list of two data frames, each containing the rows of the
 #' input data frame that correspond to the specified orientation.
 #' @export
-orientation <- function(data) {
-  data |> 
-    dplyr::group_by(SEXE1, SEXE2) |> 
-    dplyr::group_split() |> 
-    purrr::map(
-      ~if (.x$SEXE1 == "H" & .x$SEXE2 == "H") "gay" else if (.x$SEXE1 == "F" & .x$SEXE2 == "F") "lesbian" else "hetero"
-    ) |> 
-    purrr::set_names(c("gay", "lesbian", "hetero"))
+
+orientation_gay <- function(data) {
+  # Créer les subsets
+  gay <- data|> 
+    dplyr ::filter(SEXE1 == "M" & SEXE2 == "M")
+  
+
+  
+return(gay)
 }
+
+orientation_lesbian <- function(data) {
+  
+  lesbian <- data|> 
+    dplyr::filter(SEXE1 == "F" & SEXE2 == "F")
+  
+  
+  
+  return(lesbian)
+}
+
+orientation_hetero <- function(data) {
+  
+  hetero <- data|> 
+    dplyr::filter((SEXE1 == "M" & SEXE2 == "F") | (SEXE1 == "F" & SEXE2 == "F"))
+  
+  
+  
+  return(lesbian)
+}
+
