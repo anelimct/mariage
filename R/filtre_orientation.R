@@ -6,7 +6,7 @@
 #' The function then returns the three groups as a list.
 #'
 #' @param data A data frame with columns \code{SEXE1} and \code{SEXE2}.
-#' @return A list of two data frames, each containing the rows of the
+#' @return Data frames, each containing the rows of the
 #' input data frame that correspond to the specified orientation.
 #' @export
 
