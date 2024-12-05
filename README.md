@@ -21,7 +21,7 @@ sources</a><br> • <a href="#workflow">Workflow</a><br> •
 
 ## Overview
 
-This project is dedicated to… **{{ DESCRIBE YOUR PROJECT }}**
+This project is dedicated to analyse wedding data from 2021.
 
 ## Data sources
 
