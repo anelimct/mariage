@@ -40,7 +40,7 @@ data_dim <- function(data) {
 #' Variable names - INSEE 2021 French metropolitan wedding data
 #'
 #' @description 
-#' This function returns the mean age of brides and grooms in 2021, in metropolitan France.
+#' This function returns the variable names considered in the analysis.
 #'   
 #'
 #' @param data a dataframe
