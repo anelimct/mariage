@@ -1,16 +1,20 @@
 #' Filtrer un tableau par état matrimonial et sexe
 #'
 #' @description
-#' Cette fonction filtre un tableau de données en fonction de l'état matrimonial 
-#' et du sexe spécifiés. Elle vérifie d'abord que les colonnes nécessaires existent 
-#' dans le tableau, puis applique les conditions de filtrage.
+#' Cette fonction filtre un tableau de données
+#' en fonction de l'état matrimonial et du sexe spécifiés.
+#' Elle vérifie d'abord que les colonnes nécessaires existent dans le tableau,
+#' puis applique les conditions de filtrage.
 #'
-#' @param etat_marital Une chaîne de caractères représentant l'état matrimonial à filtrer.
+#' @param etat_marital Une chaîne de caractères
+#' représentant l'état matrimonial à filtrer.
 #' @param sexe Une chaîne de caractères représentant le sexe à filtrer.
-#' @param tableau Un data frame contenant les données à filtrer, avec les colonnes "ETAMAT1", 
+#' @param tableau Un data frame contenant les données à filtrer,
+#' avec les colonnes "ETAMAT1",
 #' "SEXE1", "ETAMAT2", et "SEXE2".
 #'
-#' @return Un data frame contenant les lignes qui correspondent aux conditions spécifiées.
+#' @return Un data frame contenant les lignes
+#' qui correspondent aux conditions spécifiées.
 #' 
 #' @examples
 #' \dontrun{
