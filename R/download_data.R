@@ -11,6 +11,6 @@ download_data <- function(file_url) {
     # Download the file
     download.file(file_url, dest_file)
 
-    return dest_file
+    return(dest_file)
 }
 
