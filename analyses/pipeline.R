@@ -15,13 +15,14 @@ tar_source()
 
 # Replace the target list below with your own:
 list(
-  tar_target(
-    name = data,
-    command = tibble(x = rnorm(100), y = rnorm(100))
-    # format = "qs" # Efficient storage for general data objects.
-  ),
-  tar_target(
-    name = model,
-    command = coefficients(lm(y ~ x, data = data))
-  )
+  tar_target(url, url_data()),
+
+  tar_target(data_file_zip, download_data(url)), 
+  
+  tar_target(data_file,  unzip_data(data_file_zip)), 
+  
+  tar_target(data, open_data_folder(data_file)) 
+  
 )
+
+

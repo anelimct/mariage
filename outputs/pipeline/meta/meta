@@ -1,0 +1,17 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+age_diff|function|496e1decb3f1644c|||||||||||||||
+count_marriages|function|fa904c407d15ea7b|||||||||||||||
+data|stem|9095a44ff3e7a1f9|a6c7271c0af973cd|2a4bb1fa533cf669|33550471||t20062.8750281139s|317d41b638af50f4|1355887|rds|local|vector|||0.95||
+data_dim|function|780704c7f9a722dc|||||||||||||||
+data_file|stem|806c7648d8747253|50e0af0b00352105|217b3801f202512d|-679625259||t20062.8750072338s|9b43f3e0f172ee04|111|rds|local|vector|||0.08||
+data_file_zip|stem|08528f6cd705ae07|5438c988d226354d|50c5055f2e37c627|1330876873||t20062.8750060848s|097df6ed47d18f96|107|rds|local|vector|||1.08||
+data_names|function|d8963903c28f345c|||||||||||||||
+download_data|function|e7ee4ace54898b9c|||||||||||||||
+filtre_etat_matrimonial_et_sexe|function|f657112a9467823e|||||||||||||||
+open_data_folder|function|baa09d34a1970be1|||||||||||||||
+orientation_gay|function|265da8a916f4949c|||||||||||||||
+orientation_hetero|function|60a23d6f680bff99|||||||||||||||
+orientation_lesbian|function|3c06498d10f36158|||||||||||||||
+unzip_data|function|6cb95c3c8de8e19b|||||||||||||||
+url|stem|d70cd3f29a0b38c2|f2a25df82ede115f|63b37b0b64515ec6|-2110729259||t20062.8749930441s|d4627526e85861e0|129|rds|local|vector|||0.02||
+url_data|function|4986e6ea37bc611a|||||||||||||||

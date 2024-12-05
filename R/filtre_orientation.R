@@ -10,7 +10,7 @@
 #' input data frame that correspond to the specified orientation.
 #' @export
 
-orientation_gay <- function(data) {
+filtre_mariages_gay <- function(data) {
   # Créer les subsets
   gay <- data|> 
     dplyr ::filter(SEXE1 == "M" & SEXE2 == "M")
@@ -20,7 +20,7 @@ orientation_gay <- function(data) {
 return(gay)
 }
 
-orientation_lesbian <- function(data) {
+filtre_mariage_lesbian <- function(data) {
   
   lesbian <- data|> 
     dplyr::filter(SEXE1 == "F" & SEXE2 == "F")
@@ -30,7 +30,7 @@ orientation_lesbian <- function(data) {
   return(lesbian)
 }
 
-orientation_hetero <- function(data) {
+filtre_mariage_hetero <- function(data) {
   
   hetero <- data|> 
     dplyr::filter((SEXE1 == "M" & SEXE2 == "F") | (SEXE1 == "F" & SEXE2 == "F"))
