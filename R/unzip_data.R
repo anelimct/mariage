@@ -8,6 +8,6 @@
 #' @export
 unzip_data <- function(dest_file) {
     # Unzip the file
-    unzip(zipfile = dest_file, exdir = here::here("data", "data.csv"))
-    return(here::here("data", "data.csv"))
+    unzip(zipfile = dest_file, exdir = here::here("data", "data_two_csv"))
+    return(here::here("data", "data_two_csv"))
 }
