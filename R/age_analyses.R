@@ -10,27 +10,43 @@
 #' 
 #' @export
 #'
-age_diff <- function(data, year1, year2, ind1, ind2) {
-  # Vérification des inputs
-  if (!is.numeric(year1) || !is.numeric(year2)) {
-    stop("Les années (year1 et year2) doivent être des valeurs numériques.")
+#'
+#'
+age_diff <- function(data) {
+  # Vérification des colonnes dans le DataFrame
+  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2")
+  if (!all(required_cols %in% names(data))) {
+    stop("Le DataFrame doit contenir les colonnes : ANAIS1, ANAIS2, SEXE1, SEXE2.")
   }
   
-  # Calcul de la différence
-  diff <- 0
-  if (ind1 == "M" && ind2 == "M") {
-    diff <- abs(year2 - year1) # Pour deux hommes
-  } else if (ind1 == "F" && ind2 == "F") {
-    diff <- abs(year1 - year2) # Pour deux femmes
-  } else if (ind1 == "M" && ind2 == "F") {
-    diff <- year2 - year1      # Homme avant femme
-  } else if (ind1 == "F" && ind2 == "M") {
-    diff <- year1 - year2      # Femme avant homme
-  } else {
-    stop("Les indicateurs (ind1 et ind2) doivent être 'M' ou 'F'.")
+  diff <- c()
+  
+  # Boucle sur chaque ligne de données
+  for (i in 1:nrow(data)) {
+    if (data$SEXE1[i] == "M" && data$SEXE2[i] == "M") {
+      diff <- c(diff, abs(data$ANAIS2[i] - data$ANAIS1[i]))  # Deux hommes
+    } else if (data$SEXE1[i] == "F" && data$SEXE2[i] == "F") {
+      diff <- c(diff, abs(data$ANAIS1[i] - data$ANAIS2[i]))  # Deux femmes
+    } else if (data$SEXE1[i] == "M" && data$SEXE2[i] == "F") {
+      diff <- c(diff, data$ANAIS2[i] - data$ANAIS1[i])       # Homme avant femme
+    } else if (data$SEXE1[i] == "F" && data$SEXE2[i] == "M") {
+      diff <- c(diff, data$ANAIS1[i] - data$ANAIS2[i])       # Femme avant homme
+    } else {
+      diff <- c(diff, NA)  # Valeur manquante si les sexes ne sont pas M/F
+    }
   }
   
-  return(diff)
+  # Calcul des statistiques
+  stats <- list(
+    differences = diff,
+    moyenne = mean(diff, na.rm = TRUE),
+    mediane = median(diff, na.rm = TRUE),
+    quantiles = quantile(diff, probs = c(0.25, 0.75), na.rm = TRUE),
+    ecart_type = sd(diff, na.rm = TRUE)
+  )
+  
+  return(stats)
 }
+
 
 

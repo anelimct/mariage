@@ -21,7 +21,9 @@ list(
   
   tar_target(data_file,  unzip_data(data_file_zip)), 
   
-  tar_target(data, open_data_folder(data_file)) 
+  tar_target(data, open_data_folder(data_file)), 
+  
+  tar_target(mariage_gay, filtre_mariages_gay(data))
   
 )
 
