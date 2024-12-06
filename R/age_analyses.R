@@ -35,7 +35,7 @@ difference_age_absolu_gay <- function(data) {
 
   # Liste des résultats
   stats <- data.frame(
-    differences = diff,
+    # differences = diff,
     moyenne = moyenne,
     mediane = mediane,
     quantiles = quantiles,
@@ -84,7 +84,7 @@ difference_age_absolu_lesbien <- function(data) {
   
   # Liste des résultats
   stats <- data.frame(
-    differences = diff,
+    # differences = diff,
     moyenne = moyenne,
     mediane = mediane,
     quantiles = quantiles,
@@ -134,7 +134,7 @@ difference_age_absolu_hetero <- function(data) {
   
   # Liste des résultats
   stats <- data.frame(
-    differences = diff,
+    # differences = diff,
     moyenne = moyenne,
     mediane = mediane,
     quantiles = quantiles,
@@ -190,7 +190,7 @@ difference_age_relatif_hetero <- function(data) {
   
   # Liste des résultats
   stats <- data.frame(
-    differences = diff,
+    # differences = diff,
     moyenne = moyenne,
     mediane = mediane,
     quantiles = quantiles,

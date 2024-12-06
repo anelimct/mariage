@@ -53,13 +53,13 @@ list(
   tar_target(map_wedding_prop_gay, open_deps(wedding_counts_gay)),
   tar_target(map_wedding_prop_lesb, open_deps(wedding_counts_lesb)),
   
-  tar_target(gay_age_diff, difference_age_absolu_gay(mariage_gay)),
-  tar_target(lesbian_age_diff, difference_age_absolu_lesbien(mariage_lesbien)),
-  tar_target(hetero_age_diff, difference_age_absolu_hetero(mariage_hetero)),
-  
-  tar_target(map_diff_gay, open_deps2(gay_age_diff)),
-  tar_target(map_diff_lesb, open_deps2(lesbian_age_diff)),
-  tar_target(map_diff_het, open_deps2(hetero_age_diff)),
+  # tar_target(gay_age_diff, difference_age_absolu_gay(mariage_gay)),
+  # tar_target(lesbian_age_diff, difference_age_absolu_lesbien(mariage_lesbien)),
+  # tar_target(hetero_age_diff, difference_age_absolu_hetero(mariage_hetero)),
+  # 
+  # tar_target(map_diff_gay, open_deps2(gay_age_diff)),
+  # tar_target(map_diff_lesb, open_deps2(lesbian_age_diff)),
+  # tar_target(map_diff_het, open_deps2(hetero_age_diff)),
   
   tarchetypes::tar_quarto(report, "mariage.qmd")
   
