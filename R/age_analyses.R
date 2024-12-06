@@ -17,23 +17,18 @@ difference_age_absolu_homo <- function(data) {
     paste(required_cols, collapse = ", ")))
   }
 
-  # Filtrer les couples homosexuels
-  homo_mask <- (data$SEXE1 == "M" & data$SEXE2 == "M")
-  | (data$SEXE1 == "F" & data$SEXE2 == "F")
-  data_homo <- data[homo_mask, ]
-  
   # Calculer la différence d'âge absolue
   data_homo$diff <- abs(data_homo$ANAIS2 - data_homo$ANAIS1)
-  
+
   # Extraire les différences
   diff <- data_homo$diff
-  
+
   # Calcul des statistiques
   moyenne <- mean(diff, na.rm = TRUE)
   mediane <- median(diff, na.rm = TRUE)
   quantiles <- quantile(diff, probs = c(0.25, 0.75), na.rm = TRUE)
   ecart_type <- sd(diff, na.rm = TRUE)
-  
+
   # Liste des résultats
   stats <- list(
     differences = diff,
@@ -65,24 +60,19 @@ difference_age_absolu_hetero <- function(data) {
     stop(paste("Le DataFrame doit contenir les colonnes :",
     paste(required_cols, collapse = ", ")))
   }
-  
-  # Filtrer les couples hétérosexuels
-  hetero_mask <- (data$SEXE1 == "M" & data$SEXE2 == "F")
-  | (data$SEXE1 == "F" & data$SEXE2 == "M")
-  data_hetero <- data[hetero_mask, ]
-  
+
   # Calculer la différence d'âge absolue
   data_hetero$diff <- abs(data_hetero$ANAIS2 - data_hetero$ANAIS1)
-  
+
   # Extraire les différences
   diff <- data_hetero$diff
-  
+
   # Calcul des statistiques
   moyenne <- mean(diff, na.rm = TRUE)
   mediane <- median(diff, na.rm = TRUE)
   quantiles <- quantile(diff, probs = c(0.25, 0.75), na.rm = TRUE)
   ecart_type <- sd(diff, na.rm = TRUE)
-  
+
   # Liste des résultats
   stats <- list(
     differences = diff,
@@ -91,7 +81,7 @@ difference_age_absolu_hetero <- function(data) {
     quantiles = quantiles,
     ecart_type = ecart_type
   )
-  
+
   return(stats)
 }
 
@@ -114,12 +104,7 @@ difference_age_relatif_hetero <- function(data) {
     stop(paste("Le DataFrame doit contenir les colonnes :",
     paste(required_cols, collapse = ", ")))
   }
-  
-  # Filtrer les couples hétérosexuels
-  hetero_mask <- (data$SEXE1 == "M" & data$SEXE2 == "F")
-  | (data$SEXE1 == "F" & data$SEXE2 == "M")
-  data_hetero <- data[hetero_mask, ]
-  
+
   # Calculer la différence d'âge relative
   data_hetero$diff <- ifelse(
     data_hetero$SEXE1 == "M" & data_hetero$SEXE2 == "F",
@@ -128,16 +113,16 @@ difference_age_relatif_hetero <- function(data) {
            data_hetero$ANAIS1 - data_hetero$ANAIS2,
            NA_real_)
   )
-  
+
   # Extraire les différences
   diff <- data_hetero$diff
-  
+
   # Calcul des statistiques
   moyenne <- mean(diff, na.rm = TRUE)
   mediane <- median(diff, na.rm = TRUE)
   quantiles <- quantile(diff, probs = c(0.25, 0.75), na.rm = TRUE)
   ecart_type <- sd(diff, na.rm = TRUE)
-  
+
   # Liste des résultats
   stats <- list(
     differences = diff,
@@ -146,6 +131,6 @@ difference_age_relatif_hetero <- function(data) {
     quantiles = quantiles,
     ecart_type = ecart_type
   )
-  
+
   return(stats)
 }
