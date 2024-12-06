@@ -77,11 +77,11 @@ wed_reg_prop <- function(data_subset, data) {
 } 
 
 
-#' Plot marriages per region 
+#' Plot age difference per region 
 #'
 #' @description 
-#' This function returns the plot of the number of weddings in 2021 per department, in metropolitan France.
-#'   
+#' This function returns the plot of the age difference per region
+#' 
 #' @param data a data frame
 #'
 #' @return A plot containing a map
@@ -93,7 +93,7 @@ wed_reg_prop <- function(data_subset, data) {
 
 open_deps2 <- function(data) {
   
-  data
+  data_df <- as.data.frame(data)
   
   # Spécifiez le chemin relatif vers votre fichier .geojson
   geojson_file <- here::here("data/departments/departements.geojson")
@@ -102,11 +102,11 @@ open_deps2 <- function(data) {
   france_departments <- sf::st_read(geojson_file)
   
   france_with_data <- france_departments |> 
-    dplyr::left_join(data, by = c("code" = "departements")) 
+    dplyr::left_join(data_df, by = c("code" = "departements")) 
   
   ggplot2::ggplot(france_with_data) +
     ggplot2::geom_sf(ggplot2::aes(fill = count), color = "black") +  
-    ggplot2::scale_fill_gradient(low = "lightblue", high = "darkblue", na.value = "grey") +
+    ggplot2::scale_fill_gradient(low = "pink", high = "darkred", na.value = "grey") +
     ggplot2::theme_minimal() +
     ggplot2::labs(
       title = "Nombre de mariages en France métropolitaine en 2021",
