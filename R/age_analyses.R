@@ -31,10 +31,10 @@ difference_age_absolu_gay <- function(data) {
   ecart_type <- sd(diff, na.rm = TRUE)
   
   # Ajout des departements
-  deps <- data$DEPMAR
+  deps <- data_gay$DEPMAR
 
   # Liste des résultats
-  stats <- list(
+  stats <- data.frame(
     differences = diff,
     moyenne = moyenne,
     mediane = mediane,
@@ -80,10 +80,10 @@ difference_age_absolu_lesbien <- function(data) {
   ecart_type <- sd(diff, na.rm = TRUE)
   
   # Ajout des departements
-  deps <- data$DEPMAR
+  deps <- data_lesbien$DEPMAR
   
   # Liste des résultats
-  stats <- list(
+  stats <- data.frame(
     differences = diff,
     moyenne = moyenne,
     mediane = mediane,
@@ -130,10 +130,10 @@ difference_age_absolu_hetero <- function(data) {
   ecart_type <- sd(diff, na.rm = TRUE)
   
   # Ajout des departements
-  deps <- data$DEPMAR
+  deps <- data_hetero$DEPMAR
   
   # Liste des résultats
-  stats <- list(
+  stats <- data.frame(
     differences = diff,
     moyenne = moyenne,
     mediane = mediane,
@@ -186,10 +186,10 @@ difference_age_relatif_hetero <- function(data) {
   ecart_type <- sd(diff, na.rm = TRUE)
   
   # Ajout des departements
-  deps <- data$DEPMAR
+  deps <- data_hetero$DEPMAR
   
   # Liste des résultats
-  stats <- list(
+  stats <- data.frame(
     differences = diff,
     moyenne = moyenne,
     mediane = mediane,

@@ -93,7 +93,7 @@ wed_reg_prop <- function(data_subset, data) {
 
 open_deps2 <- function(data) {
   
-  data_df <- as.data.frame(data)
+  data_df <- data.frame(difference = data$diff, departements = data$departements)
   
   # Spécifiez le chemin relatif vers votre fichier .geojson
   geojson_file <- here::here("data/departments/departements.geojson")
@@ -105,12 +105,12 @@ open_deps2 <- function(data) {
     dplyr::left_join(data_df, by = c("code" = "departements")) 
   
   ggplot2::ggplot(france_with_data) +
-    ggplot2::geom_sf(ggplot2::aes(fill = count), color = "black") +  
+    ggplot2::geom_sf(ggplot2::aes(fill = difference), color = "black") +  
     ggplot2::scale_fill_gradient(low = "pink", high = "darkred", na.value = "grey") +
     ggplot2::theme_minimal() +
     ggplot2::labs(
       title = "Nombre de mariages en France métropolitaine en 2021",
-      fill = "Nombre de mariages en 2021"
+      fill = "Différence d'âge (en années)"
     )
   
 }
