@@ -26,3 +26,13 @@ targets::tar_load("hist_mois")
 hist_mois
 ```
 
+Il existe une forte hétérogénéité spatile dans la distribution des mariage.
+```{r}
+#| echo: false
+targets::tar_load("map_wedding")
+
+map_wedding
+```
+Une suite intéressante serait de rapporter le nombre de mariage à la démographie des départements.
+
+

@@ -15,10 +15,6 @@ plot_violin_diff_type_de_mariage <- function(
     liste_gay, 
     liste_lesbien
 ) {
-    # Vérifier que les entrées sont des vecteurs numériques
-    if (!is.numeric(liste_hetero) | !is.numeric(liste_gay) | !is.numeric(liste_lesbien)) {
-        stop("Toutes les listes doivent être des vecteurs numériques.")
-    }
     
     # Créer un data frame combinant toutes les listes
     data <- data.frame(
