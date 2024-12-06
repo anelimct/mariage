@@ -1,0 +1,24 @@
+---
+title: "Ce site est une analyse de la sociologie des marriages en 2021"
+format: html
+execute: 
+  eval: true
+---
+
+
+```{r}
+#| echo: false
+
+targets::tar_config_set(store = "outputs/pipeline/", 
+                        script = "analyses/pipeline.R")
+
+```
+
+## Statistiques globales
+
+Au cours de l'année 2021, il y a eu `r nrow(targets::tar_read("data"))` mariages, dont `r nrow(targets::tar_read("mariage_gay"))` mariages gay, `r nrow(targets::tar_read("mariage_lesbien"))` mariages lesbien et `r nrow(targets::tar_read("mariage_hetero"))` mariages hétérosexuels.
+
+
+```{r}
+nrow(targets::tar_read("data"))
+```

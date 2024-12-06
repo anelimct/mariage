@@ -7,6 +7,7 @@ library(targets)
 tar_option_set(
   packages = c("tibble")
 )
+
 tar_config_set(store = "outputs/pipeline/", script = "analyses/pipeline.R")
 
 # Run the R scripts in the R/ folder with your custom functions:
@@ -28,7 +29,9 @@ list(
   
   tar_target(mariage_lesbien, filtre_mariage_lesbian(data)), 
   
-  tar_target(mariage_hetero, filtre_mariage_hetero(data))
+  tar_target(mariage_hetero, filtre_mariage_hetero(data)),
+  
+  tarchetypes::tar_quarto(report, "mariage.qmd")
   
 )
 
