@@ -40,15 +40,14 @@ mariage <img src="figures/readme/compendium-sticker.png" align="right" style="fl
 
 ## Overview
 
-This project is dedicated to... **{{ DESCRIBE YOUR PROJECT }}**
-
+This project was developed during the *Recherche Reproductible* workshop hosted by CESAB.
 
 
 ## Data sources
 
-This project uses the following databases:
+This project uses the database accessible in the ["Naissances, décès et mariages en 2021"](https://www.insee.fr/fr/statistiques/7453878?sommaire=6652160) document of INSEE.
 
-**{{ DESCRIBE THE DATA SOURCES }}**
+
 
 <!--
 | Database        | Usage                                                | Reference                 | Link      |
@@ -57,11 +56,6 @@ This project uses the following databases:
 -->
 
 
-## Workflow
-
-The analysis pipeline follows these steps:
-
-**{{ DESCRIBE THE PIPELINE }}**
 
 
 ## Content
@@ -76,22 +70,6 @@ main R script to run the entire project
 
 - [`R/`](https://github.com/anelimct/mariage/tree/main/R):
 contains R functions developed especially for this project
-
-**{{ LIST ADDITIONAL FILES/FOLDER }}**
-
-
-
-## Installation
-
-To install this compendium:
-
-- [Fork](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) 
-this repository using the GitHub interface.
-- [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
-your fork using `git clone fork-url` (replace `fork-url` by the URL of your fork). 
-Alternatively, open [RStudio IDE](https://posit.co/products/open-source/rstudio/) 
-and create a New Project from Version Control.
-
 
 
 ## Usage
@@ -115,7 +93,9 @@ source("make.R")
 
 Please use the following citation: 
 
-> **{{ ADD A CITATION }}**
+> **RPZ à Anaëlle, Miléna et Nathan**
+
+followed by a bllllah sound.
 
 
 
@@ -127,15 +107,3 @@ check out our [Contributor Guidelines](https://github.com/anelimct/mariage/blob/
 Please note that this project is released with a 
 [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). 
 By contributing to this project, you agree to abide by its terms.
-
-
-
-## Acknowledgments
-
-**{{ OPTIONAL SECTION }}**
-
-
-
-## References
-
-**{{ OPTIONAL SECTION }}**
