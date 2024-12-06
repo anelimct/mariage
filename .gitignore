@@ -27,3 +27,6 @@ NAMESPACE
 
 # .csv files ----
 *.csv
+
+# tous les fichiers liés à la pipeline target ----
+outputs/pipeline/

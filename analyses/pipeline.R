@@ -1,6 +1,7 @@
 
 # Load packages required to define the pipeline:
 library(targets)
+library(ggplot2)
 # library(tarchetypes) # Load other packages as needed.
 
 # Set target options:
@@ -30,6 +31,9 @@ list(
   tar_target(mariage_lesbien, filtre_mariage_lesbian(data)), 
   
   tar_target(mariage_hetero, filtre_mariage_hetero(data)),
+  
+  tar_target(hist_mois, hist_mois_mariage(data)),
+  
   
   tarchetypes::tar_quarto(report, "mariage.qmd")
   
