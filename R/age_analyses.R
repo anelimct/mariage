@@ -9,7 +9,7 @@
 #' @export
 difference_age_absolu_gay <- function(data) {
   # Vérification des colonnes dans le DataFrame
-  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2")
+  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2", "DEPMAR")
   missing_cols <- setdiff(required_cols, names(data))
   if (length(missing_cols) > 0) {
     stop(paste("Le DataFrame doit contenir les colonnes :",
@@ -29,6 +29,9 @@ difference_age_absolu_gay <- function(data) {
   mediane <- median(diff, na.rm = TRUE)
   quantiles <- quantile(diff, probs = c(0.25, 0.75), na.rm = TRUE)
   ecart_type <- sd(diff, na.rm = TRUE)
+  
+  # Ajout des departements
+  deps <- data$DEPMAR
 
   # Liste des résultats
   stats <- list(
@@ -36,7 +39,8 @@ difference_age_absolu_gay <- function(data) {
     moyenne = moyenne,
     mediane = mediane,
     quantiles = quantiles,
-    ecart_type = ecart_type
+    ecart_type = ecart_type, 
+    departements = deps
   )
 
   return(stats)
@@ -54,7 +58,7 @@ difference_age_absolu_gay <- function(data) {
 #' @export
 difference_age_absolu_lesbien <- function(data) {
   # Vérification des colonnes dans le DataFrame
-  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2")
+  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2", "DEPMAR")
   missing_cols <- setdiff(required_cols, names(data))
   if (length(missing_cols) > 0) {
     stop(paste("Le DataFrame doit contenir les colonnes :",
@@ -74,14 +78,18 @@ difference_age_absolu_lesbien <- function(data) {
   mediane <- median(diff, na.rm = TRUE)
   quantiles <- quantile(diff, probs = c(0.25, 0.75), na.rm = TRUE)
   ecart_type <- sd(diff, na.rm = TRUE)
-
+  
+  # Ajout des departements
+  deps <- data$DEPMAR
+  
   # Liste des résultats
   stats <- list(
     differences = diff,
     moyenne = moyenne,
     mediane = mediane,
     quantiles = quantiles,
-    ecart_type = ecart_type
+    ecart_type = ecart_type, 
+    departements = deps
   )
 
   return(stats)
@@ -100,7 +108,7 @@ difference_age_absolu_lesbien <- function(data) {
 #' @export
 difference_age_absolu_hetero <- function(data) {
   # Vérification des colonnes dans le DataFrame
-  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2")
+  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2", "DEPMAR")
   missing_cols <- setdiff(required_cols, names(data))
   if (length(missing_cols) > 0) {
     stop(paste("Le DataFrame doit contenir les colonnes :",
@@ -120,14 +128,18 @@ difference_age_absolu_hetero <- function(data) {
   mediane <- median(diff, na.rm = TRUE)
   quantiles <- quantile(diff, probs = c(0.25, 0.75), na.rm = TRUE)
   ecart_type <- sd(diff, na.rm = TRUE)
-
+  
+  # Ajout des departements
+  deps <- data$DEPMAR
+  
   # Liste des résultats
   stats <- list(
     differences = diff,
     moyenne = moyenne,
     mediane = mediane,
     quantiles = quantiles,
-    ecart_type = ecart_type
+    ecart_type = ecart_type, 
+    departements = deps
   )
 
   return(stats)
@@ -146,7 +158,7 @@ difference_age_absolu_hetero <- function(data) {
 #' @export
 difference_age_relatif_hetero <- function(data) {
   # Vérification des colonnes dans le DataFrame
-  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2")
+  required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2", "DEPMAR")
   missing_cols <- setdiff(required_cols, names(data))
   if (length(missing_cols) > 0) {
     stop(paste("Le DataFrame doit contenir les colonnes :",
@@ -172,14 +184,18 @@ difference_age_relatif_hetero <- function(data) {
   mediane <- median(diff, na.rm = TRUE)
   quantiles <- quantile(diff, probs = c(0.25, 0.75), na.rm = TRUE)
   ecart_type <- sd(diff, na.rm = TRUE)
-
+  
+  # Ajout des departements
+  deps <- data$DEPMAR
+  
   # Liste des résultats
   stats <- list(
     differences = diff,
     moyenne = moyenne,
     mediane = mediane,
     quantiles = quantiles,
-    ecart_type = ecart_type
+    ecart_type = ecart_type, 
+    departements = deps
   )
 
   return(stats)
