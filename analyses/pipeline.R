@@ -1,6 +1,7 @@
 
 # Load packages required to define the pipeline:
 library(targets)
+library(ggplot2)
 # library(tarchetypes) # Load other packages as needed.
 
 # Set target options:
