@@ -45,13 +45,13 @@ list(
   
   tar_target(wedding_counts, wed_reg(data)),
   
-  tar_target(map_wedding, open_deps(wedding_counts)),
+  tar_target(map_wedding, open_deps(wedding_counts, "Nombre de mariage en 2021")),
   
   tar_target(wedding_counts_gay, wed_reg_prop(mariage_gay, data)),
   tar_target(wedding_counts_lesb, wed_reg_prop(mariage_lesbien, data)),
   
-  tar_target(map_wedding_prop_gay, open_deps(wedding_counts_gay)),
-  tar_target(map_wedding_prop_lesb, open_deps(wedding_counts_lesb)),
+  tar_target(map_wedding_prop_gay, open_deps(wedding_counts_gay, "Proportion de mariages gays en 2021")),
+  tar_target(map_wedding_prop_lesb, open_deps(wedding_counts_lesb, "Proportion de mariages lesbiens en 2021")),
   
   
   tarchetypes::tar_quarto(report, "mariage.qmd")

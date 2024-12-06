@@ -33,7 +33,7 @@ wed_reg <- function(data) {
 #'
 
 
-open_deps <- function(data) {
+open_deps <- function(data,legende) {
   # Spécifiez le chemin relatif vers votre fichier .geojson
   geojson_file <- here::here("data/departments/departements.geojson")
   
@@ -48,8 +48,7 @@ open_deps <- function(data) {
     ggplot2::scale_fill_gradient(low = "lightblue", high = "darkblue", na.value = "grey") +
     ggplot2::theme_minimal() +
     ggplot2::labs(
-      title = "Nombre de mariages en France métropolitaine en 2021",
-      fill = "Nombre de mariages en 2021"
+      fill = paste0(legende)
     )
   
 }

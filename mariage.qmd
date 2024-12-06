@@ -26,13 +26,32 @@ targets::tar_load("hist_mois")
 hist_mois
 ```
 
-Il existe une forte hétérogénéité spatile dans la distribution des mariage.
+Il existe une forte hétérogénéité spatile dans la distribution des mariages.
 ```{r}
 #| echo: false
+#| label: 'fig_wedding_tot'
+#| fig-cap: "Nombre de mariages totaux pour chaque département"
 targets::tar_load("map_wedding")
 
 map_wedding
 ```
 Une suite intéressante serait de rapporter le nombre de mariage à la démographie des départements.
 
+Pour chaque départements il n'y a pas la même proportion de mariages homosexuels par rapport aux mariages totaux selon les départements @fig_prop_wedding_gay, @fig_prop_wedding_gay
+```{r}
+#| echo: false
+#| label: 'fig_prop_wedding_gay'
+#| fig-cap: "Proportion de mariages gays par rapport aux mariages totaux pour chaque département"
+targets::tar_load("map_wedding_prop_gay")
 
+map_wedding_prop_gay
+```
+
+```{r}
+#| echo: false
+#| label: 'fig_prop_wedding_lesbian'
+#| fig-cap: "Proportion de mariages lesbiens par rapport aux mariages totaux pour chaque département"
+targets::tar_load("map_wedding_prop_lesb")
+
+map_wedding_prop_lesb
+```
