@@ -42,17 +42,42 @@ The analysis pipeline follows these steps:
 **{{ DESCRIBE THE PIPELINE }}**
 
 ## Content
+## Content
 
-This repository is structured as follow:
+This project is structured as follow:
 
--   [`DESCRIPTION`](https://github.com/anelimct/mariage/tree/main/DESCRIPTION):
-    contains project metadata (authors, date, dependencies, etc.)
+```
+.
+├─ README.md                                  # Presentation of the project
+├─ DESCRIPTION                                # Project metadata
+├─ LICENSE.md                                 # License of the project
+|
+├─ data/                                      # Contains raw data
+|  ├─ data_two_csv/                              # INSEE weddings database
+|  |  ├─ varmod_mariages_2021.csv			# variables description
+|  |  └─ mar2021.csv					# used dataframe
+|  |
+|  └─ departments/                             # french departments limits database
+|     └─ departements.geojson
+|
+├─ R/                                         # Contains R functions (only)
+|  ├─ count_ecoregions.R                      # Function to count ecoregions per species
+|  ├─ dl_wildfinder_data.R                    # Function to download WildFinder data
+|  ├─ dl_pantheria_data.R                     # Function to download PanTHERIA data
+|  ├─ join_tables.R                           # Function to merge WildFinder tables
+|  ├─ plot_counts.R                           # Function to make the barplot
+|  ├─ read_data.R                             # Function to import WildFinder tables
+|  └─ select_species.R                        # Function to subset WildFinder species
+|
+├─ analyses/                                  # Contains R scripts
+|  └─ download-data.R                         # Script to download raw data
+|
+├─ index.qmd                                  # Quarto report
+├─ index.html                                 # Quarto result (html page)
+|
+└─ make.R                                     # Script to setup & run the project
+```
 
--   [`make.R`](https://github.com/anelimct/mariage/tree/main/make.R):
-    main R script to run the entire project
-
--   [`R/`](https://github.com/anelimct/mariage/tree/main/R): contains R
-    functions developed especially for this project
 
 **{{ LIST ADDITIONAL FILES/FOLDER }}**
 
