@@ -13,11 +13,13 @@ difference_age_absolu_homo <- function(data) {
   required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2")
   missing_cols <- setdiff(required_cols, names(data))
   if (length(missing_cols) > 0) {
-    stop(paste("Le DataFrame doit contenir les colonnes :", paste(required_cols, collapse = ", ")))
+    stop(paste("Le DataFrame doit contenir les colonnes :",
+    paste(required_cols, collapse = ", ")))
   }
-  
+
   # Filtrer les couples homosexuels
-  homo_mask <- (data$SEXE1 == "M" & data$SEXE2 == "M") | (data$SEXE1 == "F" & data$SEXE2 == "F")
+  homo_mask <- (data$SEXE1 == "M" & data$SEXE2 == "M")
+  | (data$SEXE1 == "F" & data$SEXE2 == "F")
   data_homo <- data[homo_mask, ]
   
   # Calculer la différence d'âge absolue
@@ -60,11 +62,13 @@ difference_age_absolu_hetero <- function(data) {
   required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2")
   missing_cols <- setdiff(required_cols, names(data))
   if (length(missing_cols) > 0) {
-    stop(paste("Le DataFrame doit contenir les colonnes :", paste(required_cols, collapse = ", ")))
+    stop(paste("Le DataFrame doit contenir les colonnes :",
+    paste(required_cols, collapse = ", ")))
   }
   
   # Filtrer les couples hétérosexuels
-  hetero_mask <- (data$SEXE1 == "M" & data$SEXE2 == "F") | (data$SEXE1 == "F" & data$SEXE2 == "M")
+  hetero_mask <- (data$SEXE1 == "M" & data$SEXE2 == "F")
+  | (data$SEXE1 == "F" & data$SEXE2 == "M")
   data_hetero <- data[hetero_mask, ]
   
   # Calculer la différence d'âge absolue
@@ -107,11 +111,13 @@ difference_age_relatif_hetero <- function(data) {
   required_cols <- c("ANAIS1", "ANAIS2", "SEXE1", "SEXE2")
   missing_cols <- setdiff(required_cols, names(data))
   if (length(missing_cols) > 0) {
-    stop(paste("Le DataFrame doit contenir les colonnes :", paste(required_cols, collapse = ", ")))
+    stop(paste("Le DataFrame doit contenir les colonnes :",
+    paste(required_cols, collapse = ", ")))
   }
   
   # Filtrer les couples hétérosexuels
-  hetero_mask <- (data$SEXE1 == "M" & data$SEXE2 == "F") | (data$SEXE1 == "F" & data$SEXE2 == "M")
+  hetero_mask <- (data$SEXE1 == "M" & data$SEXE2 == "F")
+  | (data$SEXE1 == "F" & data$SEXE2 == "M")
   data_hetero <- data[hetero_mask, ]
   
   # Calculer la différence d'âge relative
