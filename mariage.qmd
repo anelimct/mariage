@@ -18,18 +18,20 @@ targets::tar_config_set(store = "outputs/pipeline/",
 
 Au cours de l'année 2021, il y a eu `r nrow(targets::tar_read("data"))` mariages, dont `r nrow(targets::tar_read("mariage_gay"))` mariages gay, `r nrow(targets::tar_read("mariage_lesbien"))` mariages lesbien et `r nrow(targets::tar_read("mariage_hetero"))` mariages hétérosexuels.
 
-Les couples se mariant en France ont tendance à le faire durant l'été.
+Les couples se mariant en France ont tendance à le faire durant l'été @fig-month-wedding.
 ```{r}
 #| echo: false
+#|  label: 'fig-month-wedding'
+#| fig-cap: "Nombre de mariages selon les mois"
 targets::tar_load("hist_mois")
 
 hist_mois
 ```
 
-Il existe une forte hétérogénéité spatile dans la distribution des mariages.
+Il existe une forte hétérogénéité spatile dans la distribution des mariages @fig-wedding-tot .
 ```{r}
 #| echo: false
-#| label: 'fig_wedding_tot'
+#| label: 'fig-wedding-tot'
 #| fig-cap: "Nombre de mariages totaux pour chaque département"
 targets::tar_load("map_wedding")
 
@@ -37,10 +39,10 @@ map_wedding
 ```
 Une suite intéressante serait de rapporter le nombre de mariage à la démographie des départements.
 
-Pour chaque départements il n'y a pas la même proportion de mariages homosexuels par rapport aux mariages totaux selon les départements @fig_prop_wedding_gay, @fig_prop_wedding_gay
+Pour chaque départements il n'y a pas la même proportion de mariages homosexuels par rapport aux mariages totaux selon les départements @fig-prop_wedding-gay, @fig-prop-wedding-lesbian
 ```{r}
 #| echo: false
-#| label: 'fig_prop_wedding_gay'
+#| label: 'fig-prop_wedding-gay'
 #| fig-cap: "Proportion de mariages gays par rapport aux mariages totaux pour chaque département"
 targets::tar_load("map_wedding_prop_gay")
 
@@ -49,7 +51,7 @@ map_wedding_prop_gay
 
 ```{r}
 #| echo: false
-#| label: 'fig_prop_wedding_lesbian'
+#| label: 'fig-prop-wedding-lesbian'
 #| fig-cap: "Proportion de mariages lesbiens par rapport aux mariages totaux pour chaque département"
 targets::tar_load("map_wedding_prop_lesb")
 
