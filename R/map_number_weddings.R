@@ -72,7 +72,7 @@ wed_reg_prop <- function(data_subset, data) {
   countbyreg <- data_subset |>
     dplyr::mutate(department = as.factor(DEPMAR))|>
     dplyr::group_by(DEPMAR)|>
-    dplyr::summarise(count = dplyr::n()/dplyr::n(data))
+    dplyr::summarise(count = dplyr::n() / nrow(data))
   
 } 
 
