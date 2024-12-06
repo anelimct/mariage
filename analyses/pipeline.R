@@ -31,6 +31,9 @@ list(
   
   tar_target(mariage_hetero, filtre_mariage_hetero(data)),
   
+  tar_target(hist_mois, hist_mois_mariage(data)),
+  
+  
   tarchetypes::tar_quarto(report, "mariage.qmd")
   
 )

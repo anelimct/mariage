@@ -18,4 +18,8 @@ targets::tar_config_set(store = "outputs/pipeline/",
 
 Au cours de l'année 2021, il y a eu `r nrow(targets::tar_read("data"))` mariages, dont `r nrow(targets::tar_read("mariage_gay"))` mariages gay, `r nrow(targets::tar_read("mariage_lesbien"))` mariages lesbien et `r nrow(targets::tar_read("mariage_hetero"))` mariages hétérosexuels.
 
+Les couples se mariant en France on tendance à le faire durant l'été.
+```{r}
+targets::tar_load("hsit_mois")
+```
 
